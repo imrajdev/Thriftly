@@ -21,30 +21,33 @@ class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
 
   @override
-  _OtpScreenState createState() => _OtpScreenState();
+  State<OtpScreen> createState() => _OtpScreenState();
 }
 
 class _OtpScreenState extends State<OtpScreen> {
   final List<TextEditingController> _controllers =
       List.generate(6, (index) => TextEditingController());
+
   final List<FocusNode> _focusNodes = List.generate(6, (index) => FocusNode());
 
   @override
   void initState() {
     super.initState();
-    for (int i = 0; i < _controllers.length; i++) {
-      _controllers[i].addListener(() {
-        if (_controllers[i].text.length == 1) {
-          if (i < _controllers.length - 1) {
-            FocusScope.of(context).requestFocus(_focusNodes[i + 1]);
-          } else {
-            FocusScope.of(context).unfocus();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      for (int i = 0; i < _controllers.length; i++) {
+        _controllers[i].addListener(() {
+          if (_controllers[i].text.length == 1) {
+            if (i < _controllers.length - 1) {
+              FocusScope.of(context).requestFocus();
+            } else {
+              FocusScope.of(context).unfocus();
+            }
+          } else if (_controllers[i].text.isEmpty && i > 0) {
+            FocusScope.of(context).requestFocus();
           }
-        } else if (_controllers[i].text.isEmpty && i > 0) {
-          FocusScope.of(context).requestFocus(_focusNodes[i - 1]);
-        }
-      });
-    }
+        });
+      }
+    });
   }
 
   @override
@@ -110,20 +113,23 @@ class _OtpScreenState extends State<OtpScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(6, (index) {
-                      return Container(
-                        width: 45,
-                        height: 64,
-                        decoration: BoxDecoration(
-                          color: ColorCodes.lightGreen,
-                          borderRadius: BorderRadius.circular(20.0),
-                        ),
-                        margin: const EdgeInsets.symmetric(horizontal: 8),
-                        child: Center(
+                      return Expanded(
+                        child: Container(
+                          height: 64,
+                          decoration: BoxDecoration(
+                            color: ColorCodes.lightGreen,
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          margin: const EdgeInsets.symmetric(horizontal: 8),
+                          alignment: Alignment.center,
                           child: TextField(
                             controller: _controllers[index],
                             focusNode: _focusNodes[index],
                             keyboardType: TextInputType.number,
                             textAlign: TextAlign.center,
+                            textInputAction: index == 5
+                                ? TextInputAction.done
+                                : TextInputAction.next,
                             maxLength: 1,
                             style: const TextStyle(
                               fontSize: 24,
