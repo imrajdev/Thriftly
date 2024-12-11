@@ -16,7 +16,7 @@ Widget textWidget({
     textAlign: textAlign,
     overflow: overflow,
     maxLines: maxLines,
-    style: GoogleFonts.poppins(
+    style: GoogleFonts.poppins.call(
       fontSize: fontSize,
       fontWeight: fontWeight,
       color: color,

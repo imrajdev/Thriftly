@@ -96,15 +96,18 @@ class _DataTableViewState extends State<DataTableView> {
 
 Widget buildHeaderCell(String text) {
   return Container(
-    height: 50.0,
-    padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+    height: 55.0,
     color: ColorCodes.appBackgroundWithTransparency,
-    child: Center(
+    alignment: Alignment.center,
+    child: Tooltip(
+      message: text,
       child: textWidget(
         text: text,
         color: ColorCodes.white,
-        fontSize: 16.0,
+        // fontSize: 12.0,
         fontWeight: FontWeight.bold,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
       ),
     ),
   );

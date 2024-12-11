@@ -21,31 +21,39 @@ Widget textFormField({
   String? prefixText,
   int maxLines = 1,
 }) {
-  return Container(
-    height: height,
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(borderRadius),
+  final OutlineInputBorder border = OutlineInputBorder(
+    borderRadius: BorderRadius.circular(borderRadius),
+    borderSide: BorderSide(
       color: fillColor,
     ),
-    child: TextFormField(
-      initialValue: initialText,
-      controller: controller,
-      keyboardType: textInputType,
-      obscureText: obscureText,
-      enabled: enabled,
-      validator: validator,
-      onChanged: onChanged,
-      maxLines: maxLines,
-      decoration: InputDecoration(
-        prefixText: prefixText,
-        suffixIcon: suffixIcon,
-        border: InputBorder.none,
-        contentPadding: EdgeInsets.symmetric(
-          horizontal: contentPaddingHorizontal,
-          vertical: contentPaddingVertical,
-        ),
-        hintText: hintText,
+  );
+  return TextFormField(
+    initialValue: initialText,
+    controller: controller,
+    keyboardType: textInputType,
+    obscureText: obscureText,
+    enabled: enabled,
+    validator: validator,
+    onChanged: onChanged,
+    maxLines: maxLines,
+    decoration: InputDecoration(
+      prefixText: prefixText,
+      suffixIcon: suffixIcon,
+      fillColor: fillColor,
+      filled: true,
+      errorStyle: TextStyle(
+        color: Colors.redAccent,
       ),
+      border: border,
+      enabledBorder: border,
+      focusedBorder: border,
+      errorBorder: border,
+      focusedErrorBorder: border,
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: contentPaddingHorizontal,
+        vertical: contentPaddingVertical,
+      ),
+      hintText: hintText,
     ),
   );
 }

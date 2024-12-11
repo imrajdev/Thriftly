@@ -7,6 +7,7 @@ import 'package:budgeting_app/core/config/shared_prefs/shared_prefs.dart';
 import 'package:budgeting_app/core/constants/colors.dart';
 import 'package:budgeting_app/core/constants/route_names.dart';
 import 'package:budgeting_app/core/constants/strings.dart';
+import 'package:budgeting_app/core/utils/d_print.dart';
 import 'package:budgeting_app/core/utils/snackbar.dart';
 import 'package:budgeting_app/features/authentication/presentation/blocs/auth_bloc.dart';
 import 'package:budgeting_app/features/authentication/presentation/blocs/auth_event.dart';
@@ -38,12 +39,12 @@ class _OtpScreenState extends State<OtpScreen> {
         _controllers[i].addListener(() {
           if (_controllers[i].text.length == 1) {
             if (i < _controllers.length - 1) {
-              FocusScope.of(context).requestFocus();
+              FocusScope.of(context).requestFocus(_focusNodes[i + 1]);
             } else {
               FocusScope.of(context).unfocus();
             }
           } else if (_controllers[i].text.isEmpty && i > 0) {
-            FocusScope.of(context).requestFocus();
+            FocusScope.of(context).requestFocus(_focusNodes[i - 1]);
           }
         });
       }
@@ -64,15 +65,21 @@ class _OtpScreenState extends State<OtpScreen> {
   void verifyOtp() async {
     String id = await PreferenceHelper.getDataFromSharedPreference(
         key: "verificationId");
-    String combinedText =
+    String combinedOtp =
         _controllers.map((controller) => controller.text).join();
-    log(combinedText);
+    dPrint(combinedOtp, enableLog: true);
     if (mounted) {
       context
           .read<AuthBloc>()
-          .add(VerifyOtpEvent(verificationId: id, otp: combinedText));
+          .add(VerifyOtpEvent(verificationId: id, otp: combinedOtp));
     }
   }
+
+  // void sendOTP() {
+  //   context
+  //       .read<AuthBloc>()
+  //       .add(SendOtpEvent(phoneNumber: "$_selectedCode${_phoneNumber.text}"));
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -172,16 +179,15 @@ class _OtpScreenState extends State<OtpScreen> {
                     }
                   },
                 ),
-                const SizedBox(height: 20),
-                GestureDetector(
-                  onTap: () {},
-                  child: textWidget(
-                    text: AppStrings.resendOTP,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: ColorCodes.lightGreen,
-                  ),
-                ),
+                const SizedBox(height: 10),
+                TextButton(
+                    onPressed: () {},
+                    child: textWidget(
+                      text: AppStrings.resendOTP,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: ColorCodes.lightGreen,
+                    ))
               ],
             ),
           ),
