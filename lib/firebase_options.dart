@@ -41,48 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDCUcFlTab9jaGA_KOYm7tGABIF7K6nqTs',
-    appId: '1:1005309051138:web:c626363e181e7319aa021b',
-    messagingSenderId: '1005309051138',
-    projectId: 'thriftly-fa587',
-    authDomain: 'thriftly-fa587.firebaseapp.com',
-    storageBucket: 'thriftly-fa587.appspot.com',
-    measurementId: 'G-XMN3V7MBBX',
+    apiKey: 'AIzaSyC4Sf9R8s0gJHJNrO-9RJEhKfHFrUXFWbk',
+    appId: '1:560414122188:web:0c47c036ef32c987482269',
+    messagingSenderId: '560414122188',
+    projectId: 'budgeting-app-85c2c',
+    authDomain: 'budgeting-app-85c2c.firebaseapp.com',
+    storageBucket: 'budgeting-app-85c2c.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDbznKxGRvrERB0agHdh5bxiwHu17wXjrU',
-    appId: '1:1005309051138:android:44b4ab8fc0509937aa021b',
-    messagingSenderId: '1005309051138',
-    projectId: 'thriftly-fa587',
-    storageBucket: 'thriftly-fa587.appspot.com',
+    apiKey: 'AIzaSyDuvILOyRbYatLGj9ExQ3mkpdC9VqVOOig',
+    appId: '1:560414122188:android:a2c54ef7cc9a1602482269',
+    messagingSenderId: '560414122188',
+    projectId: 'budgeting-app-85c2c',
+    storageBucket: 'budgeting-app-85c2c.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCvDrJ5olJeWkGT3f2XfLXLn1dcgz2SK38',
-    appId: '1:1005309051138:ios:26597d8af3a9e481aa021b',
-    messagingSenderId: '1005309051138',
-    projectId: 'thriftly-fa587',
-    storageBucket: 'thriftly-fa587.appspot.com',
+    apiKey: 'AIzaSyAnQJZaqsNPUl1lYnj3cr7yrjjoHWsdmH4',
+    appId: '1:560414122188:ios:fbcc19651480026c482269',
+    messagingSenderId: '560414122188',
+    projectId: 'budgeting-app-85c2c',
+    storageBucket: 'budgeting-app-85c2c.firebasestorage.app',
+    iosClientId: '560414122188-ij66fca1nkmsk4iaee75o6n3p3avp199.apps.googleusercontent.com',
     iosBundleId: 'com.example.budgetingApp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCvDrJ5olJeWkGT3f2XfLXLn1dcgz2SK38',
-    appId: '1:1005309051138:ios:26597d8af3a9e481aa021b',
-    messagingSenderId: '1005309051138',
-    projectId: 'thriftly-fa587',
-    storageBucket: 'thriftly-fa587.appspot.com',
+    apiKey: 'AIzaSyAnQJZaqsNPUl1lYnj3cr7yrjjoHWsdmH4',
+    appId: '1:560414122188:ios:fbcc19651480026c482269',
+    messagingSenderId: '560414122188',
+    projectId: 'budgeting-app-85c2c',
+    storageBucket: 'budgeting-app-85c2c.firebasestorage.app',
+    iosClientId: '560414122188-ij66fca1nkmsk4iaee75o6n3p3avp199.apps.googleusercontent.com',
     iosBundleId: 'com.example.budgetingApp',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDCUcFlTab9jaGA_KOYm7tGABIF7K6nqTs',
-    appId: '1:1005309051138:web:b6408b9f4775e2b7aa021b',
-    messagingSenderId: '1005309051138',
-    projectId: 'thriftly-fa587',
-    authDomain: 'thriftly-fa587.firebaseapp.com',
-    storageBucket: 'thriftly-fa587.appspot.com',
-    measurementId: 'G-49R1VLQZ4J',
+    apiKey: 'AIzaSyC4Sf9R8s0gJHJNrO-9RJEhKfHFrUXFWbk',
+    appId: '1:560414122188:web:8d0c6acfc8440580482269',
+    messagingSenderId: '560414122188',
+    projectId: 'budgeting-app-85c2c',
+    authDomain: 'budgeting-app-85c2c.firebaseapp.com',
+    storageBucket: 'budgeting-app-85c2c.firebasestorage.app',
   );
+
 }

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "560414122188",
+    "project_id": "budgeting-app-85c2c",
+    "storage_bucket": "budgeting-app-85c2c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560414122188:android:a2c54ef7cc9a1602482269",
+        "android_client_info": {
+          "package_name": "com.example.budgeting_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560414122188-tglnd6c773frcha00bdcrm7eo2q5s41i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuvILOyRbYatLGj9ExQ3mkpdC9VqVOOig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "560414122188-tglnd6c773frcha00bdcrm7eo2q5s41i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "560414122188-ij66fca1nkmsk4iaee75o6n3p3avp199.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.budgetingApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
